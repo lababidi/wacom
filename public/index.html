@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wacom CTL-490 macOS Driver</title>
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --surface: #18181b;
+      --border: #27272a;
+      --text: #fafafa;
+      --text-muted: #a1a1aa;
+      --accent: #3b82f6;
+      --accent-dim: #1e3a5f;
+      --green: #22c55e;
+      --code-bg: #1c1c20;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero */
+    header {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+
+    header .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-muted);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Install block */
+    .install {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 48px 0;
+    }
+
+    .install h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .install pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .install pre .comment { color: #52525b; }
+    .install pre .cmd { color: var(--text); }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 48px 0;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .feature .icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-dim);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* How it works */
+    .section {
+      margin: 56px 0;
+    }
+
+    .section > h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .section > p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .step div h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step div p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .step code {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 12px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    /* Compat table */
+    .compat {
+      margin: 48px 0;
+    }
+
+    .compat h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    td:last-child {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 64px;
+      padding: 32px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header { padding: 48px 0 32px; }
+      h1 { font-size: 28px; }
+      header p { font-size: 16px; }
+      .features { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="badge">Open Source</div>
+      <h1>Wacom CTL-490 <span>macOS Driver</span></h1>
+      <p>A lightweight, open-source userspace driver that brings full pressure sensitivity to your Intuos S tablet on modern macOS.</p>
+      <div class="cta-row">
+        <a href="https://github.com/lababidi/wacom" class="btn btn-primary">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+        <a href="#install" class="btn btn-secondary">Get Started</a>
+      </div>
+    </header>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">&#9998;</div>
+        <h3>Pressure Sensitivity</h3>
+        <p>2048 levels of pressure delivered through native macOS tablet events. Works with Krita, Photoshop, and other drawing apps.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#9889;</div>
+        <h3>No Kernel Extension</h3>
+        <p>Runs entirely in userspace via HID. No kexts, no SIP workarounds, no reboot required.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#128270;</div>
+        <h3>Reverse-Engineered</h3>
+        <p>Protocol decoded from the Linux kernel wacom driver. Fully documented bit-level report parsing.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">&#128736;</div>
+        <h3>Diagnostic Mode</h3>
+        <p>Built-in test mode to inspect raw HID data, coordinates, pressure values, and button states in real time.</p>
+      </div>
+    </div>
+
+    <div class="install" id="install">
+      <h2>Quick Start</h2>
+      <pre><code><span class="comment"># Install the HID library</span>
+<span class="cmd">pip install hidapi</span>
+
+<span class="comment"># Clone the driver</span>
+<span class="cmd">git clone https://github.com/lababidi/wacom.git
+cd wacom</span>
+
+<span class="comment"># Run the driver</span>
+<span class="cmd">python wacom_driver.py</span>
+
+<span class="comment"># Or run in diagnostic mode</span>
+<span class="cmd">python wacom_driver.py --test</span></code></pre>
+    </div>
+
+    <div class="section">
+      <h2>How It Works</h2>
+      <p>The driver reads raw HID reports from the tablet and translates them into native macOS tablet events.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Open HID Device</h4>
+            <p>Connects to the Wacom CTL-490 using its vendor/product ID on the proprietary digitizer usage page <code>0xFF0D</code>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Decode Pen Reports</h4>
+            <p>Parses 10-byte reports to extract X/Y coordinates, pressure, distance, button states, and eraser mode.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Post CGEvents</h4>
+            <p>Maps tablet coordinates to screen space and posts <code>CGEvent</code> tablet pointer events with full pressure data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compat">
+      <h2>Compatibility</h2>
+      <table>
+        <thead>
+          <tr><th>Requirement</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Device</td><td>Wacom CTL-490 (Intuos S 2)</td></tr>
+          <tr><td>macOS</td><td>10.15 Catalina and later</td></tr>
+          <tr><td>Connection</td><td>USB</td></tr>
+          <tr><td>Python</td><td>3.8+</td></tr>
+          <tr><td>Dependencies</td><td>hidapi, pyobjc (Quartz)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Permissions</h2>
+      <p>The driver needs Accessibility access to post cursor events.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Open System Settings</h4>
+            <p>Navigate to <strong>Privacy &amp; Security &rarr; Accessibility</strong>.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Add Your Terminal</h4>
+            <p>Click <strong>+</strong> and add Terminal.app (or iTerm, or your Python binary).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Run the Driver</h4>
+            <p>Restart the driver. The permission prompt may appear automatically on first run.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built by <a href="https://github.com/lababidi">lababidi</a> &middot; Protocol from the Linux kernel <a href="https://github.com/torvalds/linux/blob/master/drivers/hid/wacom_wac.c">wacom_wac.c</a> &middot; MIT License</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
