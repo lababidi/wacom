@@ -230,6 +230,19 @@
       border-radius: 4px;
     }
 
+    .screenshot {
+      margin: 48px 0;
+      text-align: center;
+    }
+
+    .screenshot img {
+      max-width: 360px;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
     .compat { margin: 48px 0; }
 
     .compat h2 {
@@ -331,6 +344,10 @@
       </div>
     </div>
 
+    <div class="screenshot">
+      <img src="screenshot.png" alt="Wacom Tablet Driver menu bar app showing connected Intuos S tablet with live pen position, pressure, and button state">
+    </div>
+
     <div class="install" id="install">
       <h2>Install</h2>
       <div class="steps">
@@ -393,20 +410,6 @@
           <tr><td>Architecture</td><td>Apple Silicon (arm64)</td></tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="section">
-      <h2>Also Available: Python Driver</h2>
-      <p>A standalone Python script with diagnostic mode for protocol debugging.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">$</div>
-          <div>
-            <h4><code>pip install hidapi</code></h4>
-            <p>Then run <code>python wacom_driver.py</code> or <code>python wacom_driver.py --test</code> for diagnostics.</p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <footer>
