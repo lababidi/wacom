@@ -1,0 +1,28 @@
+# Build artifacts
+WacomTablet/build/
+WacomTablet/*.xcodeproj/
+DerivedData/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Xcode user data
+*.xcuserstate
+xcuserdata/
+
+# Python
+__pycache__/
+*.pyc
+
+# Provisioning profiles (contain sensitive signing info)
+*.provisionprofile
+
+# Old DMG installers (we create fresh ones for releases)
+*.dmg
+
+# Certificate requests
+*.certSigningRequest
+
+# Archives
+*.zip

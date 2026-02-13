@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wacom CTL-490 macOS Driver</title>
+  <title>Wacom Intuos macOS Driver</title>
   <style>
     :root {
       --bg: #0e0e10;
@@ -33,7 +33,6 @@
       padding: 0 24px;
     }
 
-    /* Hero */
     header {
       padding: 80px 0 48px;
       text-align: center;
@@ -61,14 +60,12 @@
       margin-bottom: 16px;
     }
 
-    h1 span {
-      color: var(--accent);
-    }
+    h1 span { color: var(--accent); }
 
     header p {
       font-size: 18px;
       color: var(--text-muted);
-      max-width: 520px;
+      max-width: 540px;
       margin: 0 auto 32px;
     }
 
@@ -96,9 +93,7 @@
       color: #fff;
     }
 
-    .btn-primary:hover {
-      background: #2563eb;
-    }
+    .btn-primary:hover { background: #2563eb; }
 
     .btn-secondary {
       background: var(--surface);
@@ -106,49 +101,13 @@
       border: 1px solid var(--border);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--text-muted);
-    }
+    .btn-secondary:hover { border-color: var(--text-muted); }
 
     .btn svg {
       width: 18px;
       height: 18px;
     }
 
-    /* Install block */
-    .install {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin: 48px 0;
-    }
-
-    .install h2 {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .install pre {
-      background: var(--code-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 20px;
-      overflow-x: auto;
-      font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-
-    .install pre .comment { color: #52525b; }
-    .install pre .cmd { color: var(--text); }
-
-    /* Features */
     .features {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -187,7 +146,23 @@
       line-height: 1.5;
     }
 
-    /* How it works */
+    .install {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 48px 0;
+    }
+
+    .install h2 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
     .section {
       margin: 56px 0;
     }
@@ -255,10 +230,7 @@
       border-radius: 4px;
     }
 
-    /* Compat table */
-    .compat {
-      margin: 48px 0;
-    }
+    .compat { margin: 48px 0; }
 
     .compat h2 {
       font-size: 24px;
@@ -291,7 +263,6 @@
       font-weight: 500;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       margin-top: 64px;
@@ -306,11 +277,8 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
 
-    /* Mobile */
     @media (max-width: 600px) {
       header { padding: 48px 0 32px; }
       h1 { font-size: 28px; }
@@ -326,14 +294,17 @@
 
     <header>
       <div class="badge">Open Source</div>
-      <h1>Wacom CTL-490 <span>macOS Driver</span></h1>
-      <p>A lightweight, open-source userspace driver that brings full pressure sensitivity to your Intuos S tablet on modern macOS.</p>
+      <h1>Wacom Intuos <span>macOS Driver</span></h1>
+      <p>A native menu bar app that brings full pressure sensitivity to your Wacom Intuos tablet on modern macOS. No kernel extensions, no SIP changes.</p>
       <div class="cta-row">
-        <a href="https://github.com/lababidi/wacom" class="btn btn-primary">
-          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          View on GitHub
+        <a href="https://github.com/lababidi/wacom/releases/latest" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download for macOS
         </a>
-        <a href="#install" class="btn btn-secondary">Get Started</a>
+        <a href="https://github.com/lababidi/wacom" class="btn btn-secondary">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Source Code
+        </a>
       </div>
     </header>
 
@@ -341,108 +312,98 @@
       <div class="feature">
         <div class="icon">&#9998;</div>
         <h3>Pressure Sensitivity</h3>
-        <p>2048 levels of pressure delivered through native macOS tablet events. Works with Krita, Photoshop, and other drawing apps.</p>
+        <p>2048 levels of pressure via native macOS tablet events. Works with Krita, Photoshop, Clip Studio, and other drawing apps.</p>
       </div>
       <div class="feature">
         <div class="icon">&#9889;</div>
-        <h3>No Kernel Extension</h3>
-        <p>Runs entirely in userspace via HID. No kexts, no SIP workarounds, no reboot required.</p>
+        <h3>Menu Bar App</h3>
+        <p>Lives in the menu bar, out of the way. Starts automatically, runs silently in the background. No dock clutter.</p>
       </div>
       <div class="feature">
         <div class="icon">&#128270;</div>
-        <h3>Reverse-Engineered</h3>
-        <p>Protocol decoded from the Linux kernel wacom driver. Fully documented bit-level report parsing.</p>
+        <h3>No SIP Changes</h3>
+        <p>No kernel extensions, no System Integrity Protection changes, no reboot required. Just download, open, and draw.</p>
       </div>
       <div class="feature">
         <div class="icon">&#128736;</div>
-        <h3>Diagnostic Mode</h3>
-        <p>Built-in test mode to inspect raw HID data, coordinates, pressure values, and button states in real time.</p>
+        <h3>Hot-Plug Support</h3>
+        <p>Automatically detects when you plug in or unplug your tablet. Supports all Intuos 2nd gen models.</p>
       </div>
     </div>
 
     <div class="install" id="install">
-      <h2>Quick Start</h2>
-      <pre><code><span class="comment"># Install the HID library</span>
-<span class="cmd">pip install hidapi</span>
-
-<span class="comment"># Clone the driver</span>
-<span class="cmd">git clone https://github.com/lababidi/wacom.git
-cd wacom</span>
-
-<span class="comment"># Run the driver</span>
-<span class="cmd">python wacom_driver.py</span>
-
-<span class="comment"># Or run in diagnostic mode</span>
-<span class="cmd">python wacom_driver.py --test</span></code></pre>
-    </div>
-
-    <div class="section">
-      <h2>How It Works</h2>
-      <p>The driver reads raw HID reports from the tablet and translates them into native macOS tablet events.</p>
+      <h2>Install</h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div>
-            <h4>Open HID Device</h4>
-            <p>Connects to the Wacom CTL-490 using its vendor/product ID on the proprietary digitizer usage page <code>0xFF0D</code>.</p>
+            <h4>Download</h4>
+            <p>Get the latest <code>.dmg</code> from <a href="https://github.com/lababidi/wacom/releases/latest" style="color: var(--accent);">GitHub Releases</a>.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div>
-            <h4>Decode Pen Reports</h4>
-            <p>Parses 10-byte reports to extract X/Y coordinates, pressure, distance, button states, and eraser mode.</p>
+            <h4>Drag to Applications</h4>
+            <p>Open the DMG and drag <strong>Wacom Tablet</strong> to your Applications folder.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div>
-            <h4>Post CGEvents</h4>
-            <p>Maps tablet coordinates to screen space and posts <code>CGEvent</code> tablet pointer events with full pressure data.</p>
+            <h4>Grant Permissions</h4>
+            <p>On first launch, grant <strong>Accessibility</strong> and <strong>Input Monitoring</strong> access when prompted in System Settings.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h4>Draw</h4>
+            <p>Plug in your Wacom tablet and open your favorite drawing app. Pressure works immediately.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="compat">
-      <h2>Compatibility</h2>
+      <h2>Supported Devices</h2>
+      <table>
+        <thead>
+          <tr><th>Model</th><th>Product</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CTL-490</td><td>Intuos S (2nd gen)</td><td>Supported</td></tr>
+          <tr><td>CTH-490</td><td>Intuos S Touch (2nd gen)</td><td>Supported</td></tr>
+          <tr><td>CTL-690</td><td>Intuos M (2nd gen)</td><td>Supported</td></tr>
+          <tr><td>CTH-690</td><td>Intuos M Touch (2nd gen)</td><td>Supported</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compat">
+      <h2>Requirements</h2>
       <table>
         <thead>
           <tr><th>Requirement</th><th>Details</th></tr>
         </thead>
         <tbody>
-          <tr><td>Device</td><td>Wacom CTL-490 (Intuos S 2)</td></tr>
-          <tr><td>macOS</td><td>10.15 Catalina and later</td></tr>
+          <tr><td>macOS</td><td>13.0 Ventura or later</td></tr>
           <tr><td>Connection</td><td>USB</td></tr>
-          <tr><td>Python</td><td>3.8+</td></tr>
-          <tr><td>Dependencies</td><td>hidapi, pyobjc (Quartz)</td></tr>
+          <tr><td>Permissions</td><td>Accessibility + Input Monitoring</td></tr>
+          <tr><td>Architecture</td><td>Apple Silicon (arm64)</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="section">
-      <h2>Permissions</h2>
-      <p>The driver needs Accessibility access to post cursor events.</p>
+      <h2>Also Available: Python Driver</h2>
+      <p>A standalone Python script with diagnostic mode for protocol debugging.</p>
       <div class="steps">
         <div class="step">
-          <div class="step-num">1</div>
+          <div class="step-num">$</div>
           <div>
-            <h4>Open System Settings</h4>
-            <p>Navigate to <strong>Privacy &amp; Security &rarr; Accessibility</strong>.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <h4>Add Your Terminal</h4>
-            <p>Click <strong>+</strong> and add Terminal.app (or iTerm, or your Python binary).</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <h4>Run the Driver</h4>
-            <p>Restart the driver. The permission prompt may appear automatically on first run.</p>
+            <h4><code>pip install hidapi</code></h4>
+            <p>Then run <code>python wacom_driver.py</code> or <code>python wacom_driver.py --test</code> for diagnostics.</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,24 @@
+name: WacomTablet
+options:
+  bundleIdPrefix: com.wacomopensource
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "16.0"
+
+targets:
+  WacomTabletApp:
+    type: application
+    platform: macOS
+    sources:
+      - WacomTabletApp
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.wacomopensource.tablet
+      INFOPLIST_FILE: WacomTabletApp/Info.plist
+      CODE_SIGN_ENTITLEMENTS: WacomTabletApp/WacomTabletApp.entitlements
+      CODE_SIGN_STYLE: Automatic
+      CODE_SIGN_IDENTITY: "Developer ID Application"
+      DEVELOPMENT_TEAM: V29E8BPY35
+      MACOSX_DEPLOYMENT_TARGET: "13.0"
+      SWIFT_VERSION: "5.9"
+      GENERATE_INFOPLIST_FILE: false
+      ENABLE_HARDENED_RUNTIME: YES
