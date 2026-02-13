@@ -2,20 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>BuildMachineOSBuild</key>
-	<string>25D5112c</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Wacom Tablet Driver</string>
 	<key>CFBundleExecutable</key>
-	<string>WacomTabletDriver</string>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.wacomopensource.tablet.driver</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>WacomTabletDriver</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>SYSX</string>
 	<key>CFBundleShortVersionString</key>
@@ -26,70 +24,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>DTCompiler</key>
-	<string>com.apple.compilers.llvm.clang.1_0</string>
-	<key>DTPlatformBuild</key>
-	<string>25C57</string>
-	<key>DTPlatformName</key>
-	<string>driverkit</string>
-	<key>DTPlatformVersion</key>
-	<string>25.2</string>
-	<key>DTSDKBuild</key>
-	<string></string>
-	<key>DTSDKName</key>
-	<string>driverkit25.2</string>
-	<key>DTXcode</key>
-	<string>2620</string>
-	<key>DTXcodeBuild</key>
-	<string>17C52</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>WacomCTH490</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.wacomopensource.tablet.driver</string>
-			<key>IOClass</key>
-			<string>AppleUserHIDEventService</string>
-			<key>IOProbeScore</key>
-			<integer>5000</integer>
-			<key>IOProviderClass</key>
-			<string>IOHIDInterface</string>
-			<key>IOUserClass</key>
-			<string>WacomTabletDriver</string>
-			<key>IOUserServerName</key>
-			<string>com.wacomopensource.tablet.driver</string>
-			<key>PrimaryUsage</key>
-			<integer>1</integer>
-			<key>PrimaryUsagePage</key>
-			<integer>65293</integer>
-			<key>ProductID</key>
-			<integer>828</integer>
-			<key>VendorID</key>
-			<integer>1386</integer>
-		</dict>
-		<key>WacomCTH690</key>
-		<dict>
-			<key>CFBundleIdentifier</key>
-			<string>com.wacomopensource.tablet.driver</string>
-			<key>IOClass</key>
-			<string>AppleUserHIDEventService</string>
-			<key>IOProbeScore</key>
-			<integer>5000</integer>
-			<key>IOProviderClass</key>
-			<string>IOHIDInterface</string>
-			<key>IOUserClass</key>
-			<string>WacomTabletDriver</string>
-			<key>IOUserServerName</key>
-			<string>com.wacomopensource.tablet.driver</string>
-			<key>PrimaryUsage</key>
-			<integer>1</integer>
-			<key>PrimaryUsagePage</key>
-			<integer>65293</integer>
-			<key>ProductID</key>
-			<integer>830</integer>
-			<key>VendorID</key>
-			<integer>1386</integer>
-		</dict>
 		<key>WacomCTL490</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -113,6 +49,29 @@
 			<key>VendorID</key>
 			<integer>1386</integer>
 		</dict>
+		<key>WacomCTH490</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.wacomopensource.tablet.driver</string>
+			<key>IOClass</key>
+			<string>AppleUserHIDEventService</string>
+			<key>IOProbeScore</key>
+			<integer>5000</integer>
+			<key>IOProviderClass</key>
+			<string>IOHIDInterface</string>
+			<key>IOUserClass</key>
+			<string>WacomTabletDriver</string>
+			<key>IOUserServerName</key>
+			<string>com.wacomopensource.tablet.driver</string>
+			<key>PrimaryUsage</key>
+			<integer>1</integer>
+			<key>PrimaryUsagePage</key>
+			<integer>65293</integer>
+			<key>ProductID</key>
+			<integer>828</integer>
+			<key>VendorID</key>
+			<integer>1386</integer>
+		</dict>
 		<key>WacomCTL690</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
@@ -133,6 +92,29 @@
 			<integer>65293</integer>
 			<key>ProductID</key>
 			<integer>829</integer>
+			<key>VendorID</key>
+			<integer>1386</integer>
+		</dict>
+		<key>WacomCTH690</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.wacomopensource.tablet.driver</string>
+			<key>IOClass</key>
+			<string>AppleUserHIDEventService</string>
+			<key>IOProbeScore</key>
+			<integer>5000</integer>
+			<key>IOProviderClass</key>
+			<string>IOHIDInterface</string>
+			<key>IOUserClass</key>
+			<string>WacomTabletDriver</string>
+			<key>IOUserServerName</key>
+			<string>com.wacomopensource.tablet.driver</string>
+			<key>PrimaryUsage</key>
+			<integer>1</integer>
+			<key>PrimaryUsagePage</key>
+			<integer>65293</integer>
+			<key>ProductID</key>
+			<integer>830</integer>
 			<key>VendorID</key>
 			<integer>1386</integer>
 		</dict>
